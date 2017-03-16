@@ -1,0 +1,11 @@
+<h2>Display All Animals</h2>
+
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+  </tr>
+  <tr ng-repeat="animal in controller.animals" ng-click="controller.showOne(animal._id)">
+    <td><img ng-src={{controller.animal.picture}} + "height="200px" width="200px">{{animal.name}}   
+    </td>
+  </tr>
+</table>

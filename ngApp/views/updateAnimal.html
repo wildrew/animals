@@ -1,0 +1,25 @@
+<h1>Update Animal</h1>
+
+Name: <input type="text" id="animalName" class="form-control" ng-model="controller.animal.name" />
+Scientific Name: <input type="text" class="form-control" ng-model="controller.animal.scientificName" />
+Conservation Status: <input type="text" class="form-control" ng-model="controller.animal.conservationStatus" />
+<div>
+<label>Add new Habitat</label>
+<input type="text" class="form-control" ng-model="controller.habitat.location" />
+<button class="btn btn-primary" ng-click="controller.addAnimalHabitat()">Add Habitat</button>
+</div>
+<div class="well" ng-repeat="item in controller.animal.habitat track by $index">
+    <label>Habitat: </label>
+    <input type="text" class="form-control" ng-model="item.location" />
+  </div>
+Cuddle Status: <input type="text" class="form-control" ng-model="controller.animal.cuddleStatus" />
+<label>Add new Diet</label>
+<input type="text" class="form-control" ng-model="controller.diet.food" />
+<button class="btn btn-primary" ng-click="controller.addAnimalDiet()">Add Diet Item</button>
+</div>
+<div class="well" ng-repeat="item in controller.animal.diet track by $index">
+    <label>Diet: </label>
+    <input type="text" class="form-control" ng-model="item.food" />
+  </div> <br />
+  Picture/URL: <input type="text" class="form-control" ng-model="controller.animal.picture" />
+<button class="btn btn-primary" ng-click="controller.updateAnimal(animal._id)">Update Animal</button>

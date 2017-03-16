@@ -1,0 +1,42 @@
+<h2>Add Animal</h2>
+
+<h4>Animal: </h4>
+<form>
+  <div class="form-group">
+    <label for="animalName">Name: </label>
+    <input type="text" class="form-control" id="animalName" ng-model="controller.animal.name" />
+  </div> <br />
+  <div>
+    <label for="animalScientificName">Scientific Name: </label>
+    <input type="text" class="form-control" id="animalScientificName" ng-model="controller.animal.scientificName" />
+  </div> <br />
+  <div>
+    <label for="animalConservationStatus">Conservation Status: </label>
+    <input type="text" class="form-control" id="animalConservationStatus" ng-model="controller.animal.conservationStatus" />
+  </div> <br />
+  <div>
+  <label>Add Habitat</label>
+  <input type="text" class="form-control" ng-model="controller.habitat.location" />
+  <button class="btn btn-primary" ng-click="controller.addAnimalHabitat()">Add Habitat</button>
+  </div>
+  <div class="well" ng-repeat="item in controller.animal.habitat track by $index">
+      <label>Habitat: </label>
+      <input type="text" class="form-control" ng-model="item.location" />
+    </div> <br />
+  <div>
+    <label for="animalCuddleStatus">Cuddle Status: </label>
+    <input type="text" class="form-control" id="animalCuddleStatus" ng-model="controller.animal.cuddleStatus" />
+  </div> <br />
+  <div>
+    <label>Add new Diet</label>
+    <input type="text" class="form-control" ng-model="controller.diet.food" />
+    <button class="btn btn-primary" ng-click="controller.addAnimalDiet()">Add Diet Item</button>
+    </div>
+    <div class="well" ng-repeat="item in controller.animal.diet track by $index">
+        <label>Diet: </label>
+        <input type="text" class="form-control" ng-model="item.food" />
+      </div> <br />
+      Picture/URL: <input type="text" class="form-control" ng-model="controller.animal.picture" />
+  <button class="btn btn-primary" ng-click="controller.addAnimal()">Add Animal</button>
+
+</form>

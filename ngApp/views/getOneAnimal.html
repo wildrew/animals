@@ -1,0 +1,19 @@
+<h2>Display An Animal</h2>
+<div>
+
+  Name:  {{controller.animal.name}} <br />
+  <img class="image" ng-src={{controller.animal.picture}} + "height="500px" width="500px">
+  Scientific Name:   {{controller.animal.scientificName}} <br />
+  Conservation Status:   {{controller.animal.conservationStatus}} <br />
+  Habitat:
+  <div ng-repeat="target in controller.animal.habitat">
+  {{target.location}} <br />
+</div> <br />
+  Cuddle Status:   {{controller.animal.cuddleStatus}} <br />
+  Diet:
+  <div ng-repeat="item in controller.animal.diet">
+  {{item.food}} <br />
+</div> <br /><br />
+<button class="btn btn-primary" ng-click="controller.updateAnimal(animal._id)">Update Animal</button>
+<button class="btn btn-primary" ng-click="controller.deleteAnimal(animal._id)">Delete Animal</button>
+</div>
